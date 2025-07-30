@@ -35,7 +35,7 @@
     --scroll-thumb-hover-color: #454f6b;
 }
 
-.dark-theme {
+.dark-mode {
     /*=======Main theme colors=======*/
     --first-color: #fff;
     --second-color: #6a59d1;
@@ -58,11 +58,11 @@
     --scroll-thumb-hover-color: #454f6b;
 }
 
-.dark-theme .nav-menu-btn{
+.dark-mode .nav-menu-btn{
     background: url(../img/burger-white.svg) no-repeat center;
 }
 
-.dark-theme .nav-menu-btn.close{
+.dark-mode .nav-menu-btn.close{
     background: url(../img/close-white.svg) no-repeat center;
 }
 
@@ -120,7 +120,70 @@ body {
     margin: 0 auto;
     padding: 0  15px;
 }
+/* Scroll to top button */
+.scrollToTop {
+    position: fixed;
+    right: 0;
+    bottom: 20px;
+    width: 45px;
+    height: 45px;
+    background: var(--second-color);
+    color: #fff;
+    font-size: var(--small-font-size);
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: -1;
+    box-shadow: var(--box-shadow);
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s linear;
+}
+.scrollToTop.flex-center {
+    justify-content: center;
+}
+.scrollToTop.active {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    right: 20px;
+}
+/* and Scroll to top button */
 
+.dark-mode {
+    background-color: #0e0e0e;
+    color: var(--first-color)
+}
+
+
+.dark-mode nav a:hover {
+    color: var(--second-color);
+}
+#toggle-theme {
+    font-size: var(--normal-font-size);
+    position: fixed;
+    top: 150px;
+    right: 0px;
+    background-color: var(--bg-transparent-color-01);
+    color: var(--first-color );
+    border: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#toggle-theme:hover {
+    background-color: var(--bg-transparent-color-02);
+    color: var(--hover-color);
+    box-shadow: 0 0 10px var(--hover-color);
+    transform: scale(1.05);
+}
+
+
+main {
+    flex: 1;
+}
 /* === header ==== */
 .header {
     position: fixed;
@@ -144,23 +207,28 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: .6s linear;
+    transition: .4s linear;
     padding: 18px 0;
 }
+.header.sticky .header-wrapper {
+    padding: 10px;
+}
+
 .nav {
     flex: 1;
     display: flex;
     justify-content: center;
 }
-ul.nav-menu {
+.nav-menu {
     display: flex;
     gap: 50px;
 }
-a.nav-link {
+.nav-link {
     font-weight: 500;
     text-transform: capitalize;
     color: var(--first-color);
     font-size: var(--normal-font-size);
+    transition: .3s linear;
 }
 a.nav-link.active,
 a.nav-link:hover {
@@ -197,7 +265,7 @@ a.nav-link:hover {
     color: var(--hover-color);
 }
 .home-info h1 {
-    font-size: 60px;
+    font-size: 50px;
     font-weight: 600;
     line-height: 1.2;
 }
@@ -830,9 +898,10 @@ ul.professional-list {
 /*and  Our Clients section */
 /* Contact section */
 .contact-wrapper {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 60px;
+    gap: 50px;
 }
 .contact-left {
     max-width: 418px;
@@ -909,8 +978,82 @@ ul.professional-list {
     width: 100%;
 }
 
-
+.second-row {
+    display: flex;
+    justify-content: space-between;
+}
+.second-row input {
+    width: 48%;
+}
 
 /* and Contact section */
-/* Contact section */
-/* and Contact section */
+/* Footer section */
+
+
+
+
+
+.footer {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px 0 20px;
+    background: var(--second-color);
+    color: white;
+}
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+}
+.about-group h2 {
+    font-size: 35px;
+    font-weight: 600;
+    opacity: .8;
+    background: linear-gradient(to top, transparent 0%, #fff 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.about-group p {
+    font-size: var(--normal-font-size);
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.info-group,
+.follow-group {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.info-group h3,
+.follow-group h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.info-group ul,
+.follow-group ul {
+    display: flex;
+    gap: 30px;
+}
+.info-group a {
+    text-transform: uppercase;
+    padding: 10px;
+}
+.follow-group ul a {
+    font-size: 22px;
+    padding: 10px;
+}
+.footer-copyright {
+    font-size: var(--normal-font-size);
+    font-weight: 300;
+    margin-top: 30px;
+    padding: 0 15px;
+    text-align: center;
+}
+/* and Footer section */
+
